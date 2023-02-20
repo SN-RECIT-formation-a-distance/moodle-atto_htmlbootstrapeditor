@@ -1,0 +1,10 @@
+{
+  "name": "moodle-atto_htmlbootstrapeditor-button",
+  "builds": {
+    "moodle-atto_htmlbootstrapeditor-button": {
+      "jsfiles": [
+        "button.js"
+      ]
+    }
+  }
+}
