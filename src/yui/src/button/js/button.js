@@ -62,7 +62,7 @@ Y.namespace('M.atto_htmlbootstrapeditor').Button = Y.Base.create('button', Y.M.e
         var that = this;
        
         var url = M.cfg.wwwroot;
-        url += "/lib/editor/atto/plugins/htmlbootstrapeditor/view.php";
+        url += "/admin/tool/htmlbootstrapeditor/view.php";
         
         this.globalVars.popup = window.open(url,'HTML Bootstrap Editor','scrollbars=1');
 
