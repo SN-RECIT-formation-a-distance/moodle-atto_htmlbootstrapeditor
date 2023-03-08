@@ -81,7 +81,31 @@ Y.namespace('M.atto_htmlbootstrapeditor').Button = Y.Base.create('button', Y.M.e
 
             let fileTransferData = that.getFileTransferData();
             let xhr = new XMLHttpRequest();
-            xhr.onreadystatechange = () => cb(xhr);
+            xhr.onreadystatechange = () => {        
+                if (xhr.readyState === 4) {
+                    if (xhr.status === 200) {
+                        let result = JSON.parse(xhr.responseText);
+                        if (result) {
+                            if (result.error) {
+                                console.log(result);
+                                return;
+                            }
+
+                            let file = result;
+                            if (result.event && result.event === 'fileexists') {
+                                // A file with this name is already in use here - rename to avoid conflict.
+                                // Chances are, it's a different image (stored in a different folder on the user's computer).
+                                // If the user wants to reuse an existing image, they can copy/paste it within the editor.
+                                file = result.newfile;
+                            }
+
+                            cb(file);
+                        }
+                    } else {
+                        alert("server error");
+                    }
+                }
+            };
 
             let formData = new FormData();
             formData.append('repo_upload_file', binFile);
