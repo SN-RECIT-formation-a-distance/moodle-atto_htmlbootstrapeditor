@@ -1,5 +1,5 @@
 echo off
-set pluginPath=..\moodledev4\lib\editor\atto\plugins\htmlbootstrapeditor
+set pluginPath=..\moodledev5\lib\editor\atto\plugins\htmlbootstrapeditor
 
 rem remove the current link
 ..\outils\junction -d src

@@ -29,6 +29,7 @@ function atto_htmlbootstrapeditor_before_standard_top_of_body_html() {
     global $PAGE, $CFG;
 
     $PAGE->requires->js('/lib/editor/atto/plugins/htmlbootstrapeditor/content.js');
+    tool_htmlbootstrapeditor_inject_js();
 }
 /**
  * Initialise the js strings required for this module.
@@ -37,7 +38,8 @@ function atto_htmlbootstrapeditor_strings_for_js() {
     global $PAGE; 
 
     tool_htmlbootstrapeditor_strings_for_js();
-    tool_htmlbootstrapeditor_inject_js();
+    tool_htmlbootstrapeditor_init_settings();
+    
     $PAGE->requires->strings_for_js(array('pluginname','htmleditor'
                                         ),
                                     'atto_htmlbootstrapeditor');
