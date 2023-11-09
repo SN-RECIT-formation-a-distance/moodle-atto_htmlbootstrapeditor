@@ -27,7 +27,7 @@ defined('MOODLE_INTERNAL') || die();
 $plugin->version   = 2023032802;        // The current plugin version (Date: YYYYMMDDXX).
 $plugin->requires  = 2020061500.00; // Moodle 3.9.0
 $plugin->component = 'atto_htmlbootstrapeditor';  // Full name of the plugin (used for diagnostics).
-$plugin->release = 'v1.0.2-stable';
+$plugin->release = 'v1.0.3-stable';
 $plugin->supported = [39, 410];      //  Moodle 3.9.x, 3.10.x and 3.11.x are supported.
 $plugin->maturity = MATURITY_STABLE; // MATURITY_ALPHA, MATURITY_BETA, MATURITY_RC or MATURITY_STABLE
 $plugin->dependencies = [
