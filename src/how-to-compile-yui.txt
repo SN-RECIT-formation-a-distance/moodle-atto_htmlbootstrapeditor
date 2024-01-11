@@ -1,3 +1,0 @@
-open cmd
-$> cd c:/wamp64/www\moodle\lib\editor\atto\plugins\recitoeditor\yui\src\button
-$> shifter
