@@ -15,21 +15,19 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * This atto plugin allows to build Bootstrap content without knowing HTML
+ * Hook callbacks for atto_htmlbootstrapeditor
  *
  * @package    atto_htmlbootstrapeditor
- * @copyright  2019 RECIT
- * @license    {@link http://www.gnu.org/licenses/gpl-3.0.html} GNU GPL v3 or later
+ * @copyright  2024 RECITFAD
+ * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
- 
+
 defined('MOODLE_INTERNAL') || die();
 
-$plugin->version   = 2024072501;        // The current plugin version (Date: YYYYMMDDXX).
-$plugin->requires  = 2020061500.00; // Moodle 3.9.0
-$plugin->component = 'atto_htmlbootstrapeditor';  // Full name of the plugin (used for diagnostics).
-$plugin->release = 'v1.0.6-stable';
-$plugin->supported = [39, 405];      //  Moodle 3.9.x, 3.10.x and 3.11.x are supported.
-$plugin->maturity = MATURITY_STABLE; // MATURITY_ALPHA, MATURITY_BETA, MATURITY_RC or MATURITY_STABLE
-$plugin->dependencies = [
-	'tool_htmlbootstrapeditor' => 2023032800
+$callbacks = [
+    [
+        'hook' => \core\hook\output\before_standard_top_of_body_html_generation::class,
+        'callback' => \atto_htmlbootstrapeditor\hook_callbacks::class . '::before_standard_top_of_body_html_generation',
+        'priority' => 0,
+    ]    
 ];

@@ -25,6 +25,9 @@
 defined('MOODLE_INTERNAL') || die();
 require_once($CFG->dirroot . '/admin/tool/htmlbootstrapeditor/lib.php');
 
+/**
+ * DEPRECATED since Moodle 4.4
+ */
 function atto_htmlbootstrapeditor_before_standard_top_of_body_html() {
     global $PAGE, $CFG;
 
