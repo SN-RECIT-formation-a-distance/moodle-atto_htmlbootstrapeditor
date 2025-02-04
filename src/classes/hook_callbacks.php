@@ -40,7 +40,7 @@ class hook_callbacks {
             $html = sprintf($script, "{$CFG->wwwroot}/lib/editor/atto/plugins/htmlbootstrapeditor/content.js");
             $hook->add_html($html);
 
-            tool_htmlbootstrapeditor_inject_js();
+            \tool_htmlbootstrapeditor_inject_js();
 
         } catch (\dml_read_exception $e) {
             return;
