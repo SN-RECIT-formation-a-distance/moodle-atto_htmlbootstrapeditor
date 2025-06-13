@@ -21,6 +21,8 @@ use core\hook\output\before_standard_top_of_body_html_generation;
 use html_writer;
 use moodle_url;
 
+require_once($CFG->dirroot . '/admin/tool/htmlbootstrapeditor/lib.php');
+
 /**
  * Allows the plugin to add any elements to the head of a HTML document.
  *
